@@ -6,26 +6,36 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .logo-container {
+            position: absolute;
+            top: 10px; /* Adjust as needed */
+            left: 10px; /* Adjust as needed */
+        }
+    </style>
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header logo-container">
+                <!-- Added logo-container class here -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home", new { area = "" })" class="navbar-brand Logo">
+                    <img src="https://t4.ftcdn.net/jpg/00/80/99/35/360_F_80993562_peLt3a9U8brcY21wUJfajqaMvOuLgjKL.jpg" width="150" height="80" alt="Logo">
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Employee List", "Index", "Employees", new { @class = "nav-link" })</li>
-
                         <li>@Html.ActionLink("Add New Employee", "Create", "Employees", new { @class = "nav-link" })</li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-center text-uppercase" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,25 +48,16 @@
                                 @Html.ActionLink("Logout", "Logout", "Home", new { @class = "nav-link text-center text-uppercase" })
                             </div>
                         </li>
-
                     }
                     else
                     {
                         <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-
                         <li>@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-
-                        <li> @Html.ActionLink("Catagories", "Catagories", "Home", new { @class = "nav-link" })</li>
-
+                        <li> @Html.ActionLink("Categories", "Catagories", "Home", new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Contact Us ", "Contact", "Home", new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Opening Hours ", "Hours", "Home", new { @class = "nav-link" })</li>
-
-
                         <li>@Html.ActionLink("Register", "Register", "Home", new { @class = "nav-link float-left" })</li>
-
                         <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link float-left" })</li>
-
-
                     }
                 </ul>
             </div>

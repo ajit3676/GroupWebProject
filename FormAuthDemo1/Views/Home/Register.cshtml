@@ -3,29 +3,93 @@
     ViewBag.Title = "Register";
 }
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <div class="card custom-card">
-        <div class="card-header bg-primary text-white">
-            <h3>Register Form</h3>
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.UserName)
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Password)
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary rounded-0">Register</button>
-                @Html.ActionLink("Login here", "Login")
-            </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://www.theplaterestaurant.com.au/cdn/shop/files/Spring-Food-Menu-Mobile-Website-Header-Image_1500px.jpg?v=1662344881');
+            /* Background image URL */
+            background-size: cover;
+            /* Cover the entire background */
+            background-position: center;
+            /* Center the background image */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .custom-card {
+            width: 300px;
+            margin: 100px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+            .custom-card .card-header {
+                background-color: #007bff;
+                color: #fff;
+                text-align: center;
+                padding: 10px 0;
+                border-radius: 5px 5px 0 0;
+            }
+
+            .custom-card .card-body {
+                padding: 20px;
+            }
+
+            .custom-card .form-group {
+                margin-bottom: 20px;
+            }
+
+            .custom-card .form-control {
+                border-radius: 0;
+            }
+
+            .custom-card .btn-primary {
+                border-radius: 0;
+            }
+
+            .custom-card a {
+                display: block;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="card custom-card">
+            <div class="card-header">
+                <h3>Register Form</h3>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    @Html.ActionLink("Login here", "Login")
+                </div>
+            </div>
         </div>
-    </div>
-}  
+    }
+</body>
+</html>
