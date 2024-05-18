@@ -1,0 +1,211 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Restaurant</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://www.theplaterestaurant.com.au/cdn/shop/files/Spring-Food-Menu-Mobile-Website-Header-Image_1500px.jpg?v=1662344881'); /* Background image URL */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* Fully transparent */
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        h1 {
+            color: #f4f4f4;
+            text-align: center; /* Center the text horizontally */
+            margin-top: 20px;
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add a transparent shadow */
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .featured-dishes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+
+        .dish {
+            width: 30%;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+            .dish:hover {
+                transform: scale(1.05);
+            }
+
+            .dish img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-bottom: 1px solid #ddd;
+            }
+
+        .dish-info {
+            padding: 15px;
+        }
+
+            .dish-info h3 {
+                margin: 0;
+                color: #333;
+            }
+
+        .cta-section {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+            .cta-btn:hover {
+                background-color: #ddd;
+            }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Our Restaurant</h1>
+        <p class="hero-subtitle">Indulge in Delicious Culinary Creations</p>
+    </header>
+
+    <div class="featured-dishes">
+        <!-- Featured Dish 1 -->
+        <div class="dish">
+            <img src="https://www.theperfectsteak.com.au/wp-content/uploads/2015/04/Steak-Bar-Marks.jpg" alt="Dish 1" />
+            <div class="dish-info">
+                <h3>Signature Steak</h3>
+                <p>A mouthwatering steak grilled to perfection, served with seasonal vegetables and mashed potatoes.</p>
+            </div>
+        </div>
+
+        <!-- Featured Dish 2 -->
+        <div class="dish">
+            <img src="https://myfoodbook.com.au/sites/default/files/styles/schema_img/public/recipe_photo/Easy_As_Aussie_Seafood_Platter_vert%20copy.jpg" alt="Dish 2" />
+            <div class="dish-info">
+                <h3>Seafood Platter</h3>
+                <p>An exquisite selection of fresh seafood including lobster, shrimp, and scallops, accompanied by lemon butter sauce.</p>
+            </div>
+        </div>
+
+        <!-- Featured Dish 3 -->
+        <div class="dish">
+            <img src="https://tb-static.uber.com/prod/image-proc/processed_images/269151e1752c1b54bf0dfa8331e23081/fdf52d66534809b650058f41d517d74a.jpeg" alt="Dish 3" />
+            <div class="dish-info">
+                <h3>Vegan Delight</h3>
+                <p>A delightful assortment of vegan dishes bursting with flavors, made from fresh, organic ingredients.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Experience the Essence of Fine Dining</h2>
+            <a href="@Url.Action("Catagories", "Home")" class="cta-btn">View Our Menu</a>
+        </div>
+    </div>
+
+    <h1>Group Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Miss Prakriti K C</td>
+                <td>Research</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mr. Ajit Chhetri Karki</td>
+                <td>Design</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mr. Aashish Bhandari</td>
+                <td>Coding</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mr. Jaka Dhita RAMANDHA</td>
+                <td>Testing</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
