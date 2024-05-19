@@ -36,7 +36,7 @@
                     {
                         <li>@Html.ActionLink("Employee List", "Index", "Employees", new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Add New Employee", "Create", "Employees", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Reservations", "Index", "Reservations", new { @class = "nav-link" })</li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-center text-uppercase" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,9 +59,11 @@
                         <li>@Html.ActionLink("Opening Hours ", "Hours", "Home", new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Register", "Register", "Home", new { @class = "nav-link float-left" })</li>
                         <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link float-left" })</li>
-                        <li>@Html.ActionLink("Reservation", "Index", "Reservations", new { area = "" }, new { @class = "nav-link" })</li>
+
 
                     }
+                    <li>@Html.ActionLink("Make Reservation", "Create", "Employees", new { area = "" }, new { @class = "nav-link" })</li>
+
                 </ul>
             </div>
         </div>
