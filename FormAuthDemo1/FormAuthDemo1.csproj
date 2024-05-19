@@ -129,12 +129,27 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Data\EmployeeContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209100438380_InitialCreate.cs" />
+    <Compile Include="Migrations\202209100438380_InitialCreate.Designer.cs">
+      <DependentUpon>202209100438380_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405190528378_InitialCreate1.cs" />
+    <Compile Include="Migrations\202405190528378_InitialCreate1.Designer.cs">
+      <DependentUpon>202405190528378_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202405190539457_InitialCreate2.cs" />
+    <Compile Include="Migrations\202405190539457_InitialCreate2.Designer.cs">
+      <DependentUpon>202405190539457_InitialCreate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -188,6 +203,11 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Catagories.cshtml" />
     <Content Include="Views\Home\Hours.cshtml" />
+    <Content Include="Views\Reservations\Create.cshtml" />
+    <Content Include="Views\Reservations\Delete.cshtml" />
+    <Content Include="Views\Reservations\Details.cshtml" />
+    <Content Include="Views\Reservations\Edit.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -204,6 +224,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202209100438380_InitialCreate.resx">
+      <DependentUpon>202209100438380_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405190528378_InitialCreate1.resx">
+      <DependentUpon>202405190528378_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405190539457_InitialCreate2.resx">
+      <DependentUpon>202405190539457_InitialCreate2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

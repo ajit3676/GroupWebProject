@@ -1,7 +1,9 @@
-﻿using System;
+﻿using FormAuthDemo1.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 
 namespace FormAuthDemo1.Data
@@ -19,8 +21,12 @@ namespace FormAuthDemo1.Data
         {
         }
 
+
         public System.Data.Entity.DbSet<FormAuthDemo1.Models.Employee> Employees { get; set; }
 
         public System.Data.Entity.DbSet<FormAuthDemo1.Models.User> Users { get; set; }
+
+        public System.Data.Entity.DbSet<FormAuthDemo1.Models.Reservation> Reservation { get; set; }
+
     }
 }
