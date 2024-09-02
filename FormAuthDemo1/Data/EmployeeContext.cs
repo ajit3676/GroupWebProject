@@ -25,8 +25,12 @@ namespace FormAuthDemo1.Data
         public System.Data.Entity.DbSet<FormAuthDemo1.Models.Employee> Employees { get; set; }
 
         public System.Data.Entity.DbSet<FormAuthDemo1.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<FormAuthDemo1.Models.Reservation> Reservations { get; set; }
+        public System.Data.Entity.DbSet<FormAuthDemo1.Models.Menu> Menus { get; set; }
+        public System.Data.Entity.DbSet<FormAuthDemo1.Models.GymClass> GymClasses { get; set; } // DbSet for GymClass model
+        public System.Data.Entity.DbSet<FormAuthDemo1.Models.NewReservation> NewReservations { get; set; } // DbSet for GymClass model
 
-       
+
 
     }
 }

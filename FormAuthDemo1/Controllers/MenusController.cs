@@ -12,134 +12,110 @@ using FormAuthDemo1.Models;
 
 namespace FormAuthDemo1.Controllers
 {
-    public class EmployeesController : Controller
+    public class MenusController : Controller
     {
         private EmployeeContext db = new EmployeeContext();
 
-        // GET: Employees
+        // GET: Menus
         public async Task<ActionResult> Index()
         {
-            return View(await db.Employees.ToListAsync());
+            return View(await db.Menus.ToListAsync());
         }
-
-        public async Task<ActionResult> NewIndex()
+        public async Task<ActionResult> NewMenu()
         {
-            return View(await db.Employees.ToListAsync());
+            return View(await db.Menus.ToListAsync());
         }
-
-        // GET: Employees/Details/5
+        // GET: Menus/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = await db.Employees.FindAsync(id);
-            if (employee == null)
+            Menu menu = await db.Menus.FindAsync(id);
+            if (menu == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(menu);
         }
 
-        // GET: Employees/Create
+        // GET: Menus/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        public ActionResult NewCreate()
-        {
-            return View();
-        }
-
-        // POST: Employees/Create
+        // POST: Menus/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Age,ReservationDate,TableNumber")] Employee employee)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Name,Description,Price")] Menu menu)
         {
             if (ModelState.IsValid)
             {
-                db.Employees.Add(employee);
+                db.Menus.Add(menu);
                 await db.SaveChangesAsync();
-
-                // Redirect to CreateConfirmation view after successful creation
-                return RedirectToAction("CreateConfirmation", new { id = employee.Id });
+                return RedirectToAction("Index");
             }
 
-            return View(employee);
+            return View(menu);
         }
 
-        // GET: Employees/CreateConfirmation/5
-        public async Task<ActionResult> CreateConfirmation(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Employee employee = await db.Employees.FindAsync(id);
-            if (employee == null)
-            {
-                return HttpNotFound();
-            }
-            return View(employee);
-        }
-
-        // GET: Employees/Edit/5
+        // GET: Menus/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = await db.Employees.FindAsync(id);
-            if (employee == null)
+            Menu menu = await db.Menus.FindAsync(id);
+            if (menu == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(menu);
         }
 
-        // POST: Employees/Edit/5
+        // POST: Menus/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Age,ReservationDate,TableNumber")] Employee employee)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,Description,Price")] Menu menu)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employee).State = EntityState.Modified;
+                db.Entry(menu).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(employee);
+            return View(menu);
         }
 
-        // GET: Employees/Delete/5
+        // GET: Menus/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = await db.Employees.FindAsync(id);
-            if (employee == null)
+            Menu menu = await db.Menus.FindAsync(id);
+            if (menu == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(menu);
         }
 
-        // POST: Employees/Delete/5
+        // POST: Menus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Employee employee = await db.Employees.FindAsync(id);
-            db.Employees.Remove(employee);
+            Menu menu = await db.Menus.FindAsync(id);
+            db.Menus.Remove(menu);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -152,5 +128,6 @@ namespace FormAuthDemo1.Controllers
             }
             base.Dispose(disposing);
         }
+        
     }
 }

@@ -1,211 +1,232 @@
 ﻿@{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "Sydney Fitness Studio";
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Restaurant</title>
+    <title>Welcome to Sydney Fitness Studio</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('https://www.theplaterestaurant.com.au/cdn/shop/files/Spring-Food-Menu-Mobile-Website-Header-Image_1500px.jpg?v=1662344881'); /* Background image URL */
-            background-size: cover; /* Cover the entire background */
-            background-position: center; /* Center the background image */
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #444;
+            background-color: #f4f4f4;
         }
 
-        header {
-            background-color: rgba(0, 0, 0, 0.5); /* Fully transparent */
-            color: white;
+        .header {
+            background-image: url('https://definitionfitness.com.au/wp-content/uploads/sites/63/2017/12/definitionfitness-about.jpg');
+            background-size: cover;
+            background-position: center;
             text-align: center;
-            padding: 100px 0;
+            color: white;
+            padding: 150px 20px;
         }
 
-        h1 {
-            color: #f4f4f4;
-            text-align: center; /* Center the text horizontally */
-            margin-top: 20px;
-            font-size: 3em;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add a transparent shadow */
-        }
-
-        .hero-subtitle {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-        .featured-dishes {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 50px 0;
-        }
-
-        .dish {
-            width: 30%;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-            .dish:hover {
-                transform: scale(1.05);
+            .header h1 {
+                font-size: 3.5em;
+                margin-bottom: 10px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-weight: bold;
             }
 
-            .dish img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                border-bottom: 1px solid #ddd;
-            }
-
-        .dish-info {
-            padding: 15px;
-        }
-
-            .dish-info h3 {
+            .header p {
+                font-size: 1.2em;
                 margin: 0;
+            }
+
+        .content-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .featured-classes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .class {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .class:hover {
+                transform: translateY(-10px);
+            }
+
+            .class img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+
+        .class-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+            .class-info h3 {
+                font-size: 1.5em;
                 color: #333;
+                margin: 0;
+            }
+
+            .class-info p {
+                font-size: 0.9em;
+                color: #666;
+                margin: 10px 0 0;
             }
 
         .cta-section {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: #ff4c60;
             color: white;
             text-align: center;
-            padding: 100px 0;
+            padding: 60px 20px;
+            margin-top: 40px;
         }
 
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background-color: #fff;
-            color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-            .cta-btn:hover {
-                background-color: #ddd;
+            .cta-section h2 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
             }
 
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            .cta-section a {
+                display: inline-block;
+                padding: 15px 30px;
+                background-color: white;
+                color: #ff4c60;
+                text-decoration: none;
+                font-weight: bold;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+                .cta-section a:hover {
+                    background-color: #fff1f3;
+                }
+
+        .team-section {
             background-color: #fff;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
 
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
+            .team-section h2 {
+                text-align: center;
+                font-size: 2em;
+                color: #333;
+                margin-bottom: 40px;
+            }
+
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        th {
-            background-color: #f2f2f2;
-        }
+            .team-table th, .team-table td {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+                text-align: center;
+            }
 
-        tr:hover {
-            background-color: #f2f2f2;
-        }
+            .team-table th {
+                background-color: #ff4c60;
+                color: white;
+            }
+
+            .team-table tr:hover {
+                background-color: #f9f9f9;
+            }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to Our Restaurant</h1>
-        <p class="hero-subtitle">Indulge in Delicious Culinary Creations</p>
-    </header>
+    <div class="header">
+        <h1>Welcome to Sydney Fitness Studio</h1>
+        <p>Empower Your Fitness Journey</p>
+    </div>
 
-    <div class="featured-dishes">
-        <!-- Featured Dish 1 -->
-        <div class="dish">
-            <img src="https://www.theperfectsteak.com.au/wp-content/uploads/2015/04/Steak-Bar-Marks.jpg" alt="Dish 1" />
-            <div class="dish-info">
-                <h3>Signature Steak</h3>
-                <p>A mouthwatering steak grilled to perfection, served with seasonal vegetables and mashed potatoes.</p>
+    <div class="content-section">
+        <div class="featured-classes">
+            <!-- Featured Class 1 -->
+            <div class="class">
+                <img src="https://images.unsplash.com/photo-1594737625785-c50b1e13f9c4" alt="Yoga Class">
+                <div class="class-info">
+                    <h3>Yoga</h3>
+                    <p>Relax and rejuvenate with our calming yoga sessions, suitable for all levels.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Featured Dish 2 -->
-        <div class="dish">
-            <img src="https://myfoodbook.com.au/sites/default/files/styles/schema_img/public/recipe_photo/Easy_As_Aussie_Seafood_Platter_vert%20copy.jpg" alt="Dish 2" />
-            <div class="dish-info">
-                <h3>Seafood Platter</h3>
-                <p>An exquisite selection of fresh seafood including lobster, shrimp, and scallops, accompanied by lemon butter sauce.</p>
+            <!-- Featured Class 2 -->
+            <div class="class">
+                <img src="https://images.unsplash.com/photo-1550345332-5a5b56a2c868" alt="Pilates Class">
+                <div class="class-info">
+                    <h3>Pilates</h3>
+                    <p>Strengthen your core and improve flexibility with our dynamic Pilates classes.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Featured Dish 3 -->
-        <div class="dish">
-            <img src="https://tb-static.uber.com/prod/image-proc/processed_images/269151e1752c1b54bf0dfa8331e23081/fdf52d66534809b650058f41d517d74a.jpeg" alt="Dish 3" />
-            <div class="dish-info">
-                <h3>Vegan Delight</h3>
-                <p>A delightful assortment of vegan dishes bursting with flavors, made from fresh, organic ingredients.</p>
+            <!-- Featured Class 3 -->
+            <div class="class">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="HIIT Class">
+                <div class="class-info">
+                    <h3>HIIT</h3>
+                    <p>Get your heart pumping with our high-intensity interval training sessions.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title">Experience the Essence of Fine Dining</h2>
-            <a href="@Url.Action("Catagories", "Home")" class="cta-btn">View Our Menu</a>
-        </div>
+        <h2>Reserve Your Spot Today</h2>
+        <a href="@Url.Action("Classes", "Reservation")">View Class Schedule</a>
     </div>
 
-    <h1>Group Details</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Student ID</th>
-                <th>Student Name</th>
-                <th>Task</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Miss Prakriti K C</td>
-                <td>Research</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Mr. Ajit Chhetri Karki</td>
-                <td>Design</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Mr. Aashish Bhandari</td>
-                <td>Coding</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Mr. Jaka Dhita RAMANDHA</td>
-                <td>Testing</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class="team-section">
+        <h2>Meet Our Team</h2>
+        <table class="team-table">
+            <thead>
+                <tr>
+                    <th>Staff ID</th>
+                    <th>Staff Name</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sarah Johnson</td>
+                    <td>Yoga Instructor</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Michael Lee</td>
+                    <td>Pilates Instructor</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Emily Davis</td>
+                    <td>HIIT Trainer</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>James Miller</td>
+                    <td>Studio Manager</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<FormAuthDemo1.Models.Menu>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://www.theplaterestaurant.com.au/cdn/shop/files/Spring-Food-Menu-Mobile-Website-Header-Image_1500px.jpg?v=1662344881');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Georgia', serif;
+            color: #4a4a4a;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+        }
+
+        .menu-section {
+            margin: 20px 0;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .menu-item:last-child {
+                border-bottom: none;
+            }
+
+        .menu-item-name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .menu-item-description {
+            margin-top: 5px;
+            font-style: italic;
+            color: #666;
+        }
+
+        .menu-item-price {
+            font-weight: bold;
+            color: #e67e22;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Menu</h2>
+
+        @foreach (var item in Model)
+        {
+            <div class="menu-section">
+                <div class="menu-item">
+                    <div>
+                        <div class="menu-item-name">@Html.DisplayFor(modelItem => item.Name)</div>
+                        <div class="menu-item-description">@Html.DisplayFor(modelItem => item.Description)</div>
+                    </div>
+                    <div class="menu-item-price">@Html.DisplayFor(modelItem => item.Price)</div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

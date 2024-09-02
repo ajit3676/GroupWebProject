@@ -1,0 +1,75 @@
+﻿@model FormAuthDemo1.Models.Employee
+
+@{
+    ViewBag.Title = "Reservation Created";
+}
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url('https://www.theplaterestaurant.com.au/cdn/shop/files/Spring-Food-Menu-Mobile-Website-Header-Image_1500px.jpg?v=1662344881');
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+
+    .confirmation-container {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: 50px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .confirmation-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+    .table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .btn-primary {
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+</style>
+
+<div class="confirmation-container">
+    <h2>Reservation Created</h2>
+
+    <p>Your reservation has been successfully created. Here are the details:</p>
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>@Html.DisplayFor(model => model.Age)</td>
+        </tr>
+        <tr>
+            <th>Reservation Date</th>
+            <td>@Html.DisplayFor(model => model.ReservationDate)</td>
+        </tr>
+        <tr>
+            <th>Table Number</th>
+            <td>@Html.DisplayFor(model => model.TableNumber)</td>
+        </tr>
+    </table>
+
+    <a href="@Url.Action("NewIndex", "Employees")" class="btn btn-primary">Back to List</a>
+</div>

@@ -34,8 +34,10 @@
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Reservation List", "Index", "Employees", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Add New Reservation", "Create", "Employees", new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Reservation List", "Index", "Employees", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Add New Reservation", "Create", "Employees", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Register", "Register", "Home", null, new { @class = "nav-link float-left" })</li>
+                        <li class="nav-item">@Html.ActionLink("Menus", "Index", "Menus", null, new { @class = "nav-link" })</li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-center text-uppercase" href="#" id="navbarDropdown" role="button"
@@ -46,23 +48,28 @@
                                 <a class="dropdown-item" href="#">My Account</a>
                                 <a class="dropdown-item" href="#">Edit Profile</a>
                                 <div class="dropdown-divider"></div>
-                                @Html.ActionLink("Logout", "Logout", "Home", new { @class = "nav-link text-center text-uppercase" })
+                                @Html.ActionLink("Logout", "Logout", "Home", null, new { @class = "nav-link text-center text-uppercase" })
+
                             </div>
                         </li>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                        <li> @Html.ActionLink("Categories", "Catagories", "Home", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Contact Us ", "Contact", "Home", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Opening Hours ", "Hours", "Home", new { @class = "nav-link" })</li>
-                        <li>@Html.ActionLink("Register", "Register", "Home", new { @class = "nav-link float-left" })</li>
-                        <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link float-left" })</li>
+                        <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Opening Hours", "Hours", "Home", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Gym", "Index", "GymClasses", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("NewReservation", "Index","NewReservations", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Login", "Login", "Home", null, new { @class = "nav-link float-left" })</li>
+                        <li class="nav-item">@Html.ActionLink("Menus", "NewMenu", "Menus", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Reservation List", "NewIndex", "Employees", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Make Reservation", "Create", "Employees", null, new { @class = "nav-link" })</li>
+
 
 
                     }
-                   
+
 
                 </ul>
             </div>

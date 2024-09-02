@@ -128,7 +128,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\GymClassesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Controllers\NewReservationsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Data\EmployeeContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -146,8 +149,24 @@
     <Compile Include="Migrations\202405191636320_Initial2.Designer.cs">
       <DependentUpon>202405191636320_Initial2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202405261600292_AddUserAccountModel.cs" />
+    <Compile Include="Migrations\202405261600292_AddUserAccountModel.Designer.cs">
+      <DependentUpon>202405261600292_AddUserAccountModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202409021346595_AddGymClassModel.cs" />
+    <Compile Include="Migrations\202409021346595_AddGymClassModel.Designer.cs">
+      <DependentUpon>202409021346595_AddGymClassModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202409021406355_AddNewReservationModel.cs" />
+    <Compile Include="Migrations\202409021406355_AddNewReservationModel.Designer.cs">
+      <DependentUpon>202409021406355_AddNewReservationModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\GymClass.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\NewReservation.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -194,13 +213,30 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Catagories.cshtml" />
     <Content Include="Views\Home\Hours.cshtml" />
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Menus\Create.cshtml" />
+    <Content Include="Views\Menus\Delete.cshtml" />
+    <Content Include="Views\Menus\Details.cshtml" />
+    <Content Include="Views\Menus\Edit.cshtml" />
+    <Content Include="Views\Menus\Index.cshtml" />
+    <Content Include="Views\Menus\NewMenu.cshtml" />
+    <Content Include="Views\Employees\NewIndex.cshtml" />
+    <Content Include="Views\Employees\CreateConfirmation.cshtml" />
+    <Content Include="Views\GymClasses\Create.cshtml" />
+    <Content Include="Views\GymClasses\Delete.cshtml" />
+    <Content Include="Views\GymClasses\Details.cshtml" />
+    <Content Include="Views\GymClasses\Edit.cshtml" />
+    <Content Include="Views\GymClasses\Index.cshtml" />
+    <Content Include="Views\NewReservations\Create.cshtml" />
+    <Content Include="Views\NewReservations\Delete.cshtml" />
+    <Content Include="Views\NewReservations\Details.cshtml" />
+    <Content Include="Views\NewReservations\Edit.cshtml" />
+    <Content Include="Views\NewReservations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -227,6 +263,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405191636320_Initial2.resx">
       <DependentUpon>202405191636320_Initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202405261600292_AddUserAccountModel.resx">
+      <DependentUpon>202405261600292_AddUserAccountModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409021346595_AddGymClassModel.resx">
+      <DependentUpon>202409021346595_AddGymClassModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202409021406355_AddNewReservationModel.resx">
+      <DependentUpon>202409021406355_AddNewReservationModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,113 @@
+﻿@model IEnumerable<FormAuthDemo1.Models.Employee>
+
+@{
+    ViewBag.Title = "Employee Reservations";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://www.theplaterestaurant.com.au/cdn/shop/files/Spring-Food-Menu-Mobile-Website-Header-Image_1500px.jpg?v=1662344881');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 50px auto;
+            padding: 30px;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Georgia', serif;
+            color: #4a4a4a;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+            .table th, .table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+
+            .table th {
+                background-color: #f2f2f2;
+                color: #333;
+                font-size: 18px;
+            }
+
+            .table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .table tr:hover {
+                background-color: #ddd;
+            }
+
+            .table td {
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Employee Reservations</h2>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReservationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TableNumber)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReservationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TableNumber)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
