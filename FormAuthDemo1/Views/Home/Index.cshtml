@@ -1,231 +1,111 @@
 ﻿@{
-    ViewBag.Title = "Sydney Fitness Studio";
+    ViewBag.Title = "Leadership & Training Institute Australia";
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Sydney Fitness Studio</title>
+    <title>@ViewBag.Title</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            color: #444;
             background-color: #f4f4f4;
+            color: #333;
         }
 
-        .header {
-            background-image: url('https://definitionfitness.com.au/wp-content/uploads/sites/63/2017/12/definitionfitness-about.jpg');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
-            padding: 150px 20px;
-        }
-
-            .header h1 {
-                font-size: 3.5em;
-                margin-bottom: 10px;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                font-weight: bold;
-            }
-
-            .header p {
-                font-size: 1.2em;
-                margin: 0;
-            }
-
-        .content-section {
-            padding: 50px 20px;
+        .section {
+            padding: 50px;
             max-width: 1200px;
             margin: auto;
-        }
-
-        .featured-classes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .class {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
 
-            .class:hover {
-                transform: translateY(-10px);
-            }
-
-            .class img {
-                width: 100%;
-                height: 180px;
-                object-fit: cover;
-            }
-
-        .class-info {
-            padding: 20px;
-            text-align: center;
+        h1, h2 {
+            color: #444;
+            margin-bottom: 15px;
         }
 
-            .class-info h3 {
-                font-size: 1.5em;
-                color: #333;
-                margin: 0;
-            }
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
 
-            .class-info p {
-                font-size: 0.9em;
-                color: #666;
-                margin: 10px 0 0;
-            }
-
-        .cta-section {
-            background-color: #ff4c60;
-            color: white;
-            text-align: center;
+        .section-header {
+            background-color: #222;
+            color: #fff;
             padding: 60px 20px;
-            margin-top: 40px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
         }
 
-            .cta-section h2 {
-                font-size: 2.5em;
-                margin-bottom: 20px;
-            }
-
-            .cta-section a {
-                display: inline-block;
-                padding: 15px 30px;
-                background-color: white;
-                color: #ff4c60;
-                text-decoration: none;
-                font-weight: bold;
-                border-radius: 5px;
-                transition: background-color 0.3s;
-            }
-
-                .cta-section a:hover {
-                    background-color: #fff1f3;
-                }
-
-        .team-section {
-            background-color: #fff;
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .programs img, .partnerships img, .conferences img {
+            width: 100%;
+            height: auto;
             border-radius: 10px;
         }
-
-            .team-section h2 {
-                text-align: center;
-                font-size: 2em;
-                color: #333;
-                margin-bottom: 40px;
-            }
-
-        .team-table {
-            width: 100%;
-            border-collapse: collapse;
+    </style>
+    <style>
+        .section {
+            padding: 50px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
 
-            .team-table th, .team-table td {
-                padding: 15px;
-                border-bottom: 1px solid #ddd;
-                text-align: center;
-            }
+        h2 {
+            color: #444;
+            margin-bottom: 15px;
+        }
 
-            .team-table th {
-                background-color: #ff4c60;
-                color: white;
-            }
-
-            .team-table tr:hover {
-                background-color: #f9f9f9;
-            }
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Welcome to Sydney Fitness Studio</h1>
-        <p>Empower Your Fitness Journey</p>
+    <div class="section-header">
+        <h1>Empowering Leaders of Tomorrow</h1>
+        <p>Your journey to exceptional leadership starts here.</p>
+    </div>
+    <div class="section">
+        <h2>What We Do?</h2>
+        <p>At the Leadership Institute Australia (LIA), we specialize in providing high-quality research training programs for academic students and professionals. Our offerings include comprehensive research proposal development, project management skills, and the latest methodologies in various research fields. We aim to empower individuals with the knowledge and tools necessary to excel in their academic and professional research endeavors, ensuring a dynamic and supportive learning environment.</p>
     </div>
 
-    <div class="content-section">
-        <div class="featured-classes">
-            <!-- Featured Class 1 -->
-            <div class="class">
-                <img src="https://images.unsplash.com/photo-1594737625785-c50b1e13f9c4" alt="Yoga Class">
-                <div class="class-info">
-                    <h3>Yoga</h3>
-                    <p>Relax and rejuvenate with our calming yoga sessions, suitable for all levels.</p>
-                </div>
-            </div>
-
-            <!-- Featured Class 2 -->
-            <div class="class">
-                <img src="https://images.unsplash.com/photo-1550345332-5a5b56a2c868" alt="Pilates Class">
-                <div class="class-info">
-                    <h3>Pilates</h3>
-                    <p>Strengthen your core and improve flexibility with our dynamic Pilates classes.</p>
-                </div>
-            </div>
-
-            <!-- Featured Class 3 -->
-            <div class="class">
-                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="HIIT Class">
-                <div class="class-info">
-                    <h3>HIIT</h3>
-                    <p>Get your heart pumping with our high-intensity interval training sessions.</p>
-                </div>
-            </div>
-        </div>
+    <div class="section">
+        <h2>Who We Are</h2>
+        <p>Leadership Institute Australia (LIA) is a dedicated organization focused on advancing research skills for students, professionals, and academics. Our mission is to foster a collaborative learning environment where participants gain expertise in research proposal development, project management, and innovative methodologies. With a team of seasoned educators and industry professionals, we are committed to equipping individuals with the tools they need to succeed in their research endeavors.</p>
     </div>
 
-    <div class="cta-section">
-        <h2>Reserve Your Spot Today</h2>
-        <a href="@Url.Action("Classes", "Reservation")">View Class Schedule</a>
+    <div class="section">
+        <h2>Programs</h2>
+        <p>Our leadership programs are designed to equip individuals with essential skills for effective leadership. From strategic management to interpersonal communication, we cover a wide range of areas to develop well-rounded leaders.</p>
+        <img src="https://example.com/programs-image.jpg" alt="Leadership Program">
     </div>
 
-    <div class="team-section">
-        <h2>Meet Our Team</h2>
-        <table class="team-table">
-            <thead>
-                <tr>
-                    <th>Staff ID</th>
-                    <th>Staff Name</th>
-                    <th>Role</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Sarah Johnson</td>
-                    <td>Yoga Instructor</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Michael Lee</td>
-                    <td>Pilates Instructor</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Emily Davis</td>
-                    <td>HIIT Trainer</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>James Miller</td>
-                    <td>Studio Manager</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="section">
+        <h2>Partnerships</h2>
+        <p>We have partnerships with prestigious universities and industry leaders, ensuring that our programs provide practical, real-world knowledge. These collaborations also offer our participants access to exclusive events and mentorship opportunities.</p>
+        <img src="https://example.com/partnerships-image.jpg" alt="Partnerships">
+    </div>
+
+    <div class="section">
+        <h2>Conferences</h2>
+        <p>Our annual leadership conferences bring together experts and thought leaders to discuss the latest trends, challenges, and innovations in leadership. Attendees can participate in keynote sessions, workshops, and networking events.</p>
+        <img src="https://example.com/conferences-image.jpg" alt="Conferences">
     </div>
 
 </body>
