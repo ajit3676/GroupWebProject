@@ -7,100 +7,169 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('https://images.unsplash.com/photo-1580694316374-cf66a38aff60');
-            background-size: cover;
-            background-position: center;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
             color: #333;
         }
 
-        h1 {
+        /* Header */
+        header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
             color: #fff;
+            padding: 50px 20px;
             text-align: center;
-            padding: 20px 0;
-            margin: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
         }
 
-        .about-container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            header h1 {
+                margin: 0;
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            header p {
+                margin: 10px 0 20px;
+                font-size: 1.2rem;
+            }
+
+        nav {
+            margin-top: 20px;
         }
 
-        p {
-            text-align: justify;
-            line-height: 1.6;
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: bold;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        /* Main Content */
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #444;
         }
 
         .team-section {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
+            gap: 20px;
+            justify-content: center;
         }
 
         .team-member {
-            width: 30%;
-            margin-bottom: 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            padding: 15px;
+            background: #fff;
             border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 280px;
         }
 
             .team-member img {
-                width: 80%; /* Adjust image size */
+                width: 100px;
+                height: 100px;
                 border-radius: 50%;
                 margin-bottom: 10px;
             }
 
             .team-member h3 {
+                margin: 10px 0 5px;
+                font-size: 1.2rem;
                 color: #333;
-                font-size: 1.2em; /* Increase font size */
             }
 
             .team-member p {
-                font-size: 0.9em; /* Adjust font size */
+                font-size: 0.9rem;
+                color: #666;
             }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+            footer a {
+                color: #fff;
+                margin: 0 10px;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
     </style>
 </head>
 <body>
-    <h1>About Us</h1>
 
-    <div class="about-container">
-        <p>Welcome to Sydney Fitness Studio! Our mission is to help you achieve your fitness goals through a variety of classes and personalized training. We believe in creating a supportive and motivating environment for all our members.</p>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Leadership Institute Australia</h1>
+        <p>Empowering Researchers & Academics Through Training and Development</p>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#team">Our Team</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-        <p>Our team of professional trainers and instructors are dedicated to providing you with the best fitness experience. Whether you're into yoga, Pilates, or high-intensity interval training, we have something for everyone. Join us and be a part of our fitness community!</p>
+    <!-- About Section -->
+    <div class="content" id="about">
+        <h2 class="section-title">About Us</h2>
+        <p>Leadership Institute Australia (LIA) is dedicated to supporting researchers and academics through innovative training, conferences, and resources. Our mission is to foster growth, collaboration, and success in your academic and professional journeys.</p>
+    </div>
 
+    <!-- Team Section -->
+    <div class="content" id="team">
+        <h2 class="section-title">Meet Our Team</h2>
         <div class="team-section">
             <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Yoga Instructor">
-                <h3>Sarah Johnson</h3>
-                <p>Yoga Instructor</p>
-            </div>
-
-            <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Pilates Instructor">
-                <h3>Michael Lee</h3>
-                <p>Pilates Instructor</p>
+                <img src="https://via.placeholder.com/100" alt="Ajit Chhetri Karki">
+                <h3>Ajit Chhetri Karki</h3>
+                <p>Project Coordinator</p>
             </div>
             <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="HIIT Trainer">
-                <h3>Emily Davis</h3>
-                <p>HIIT Trainer</p>
+                <img src="https://via.placeholder.com/100" alt="Team Member">
+                <h3>Lalpek Tamang</h3>
+                <p>Research Specialist</p>
             </div>
             <div class="team-member">
-                <img src="https://via.placeholder.com/150" alt="Studio Manager">
-                <h3>James Miller</h3>
-                <p>Studio Manager</p>
+                <img src="https://via.placeholder.com/100" alt="Team Member">
+                <h3>Binay Parajuli</h3>
+                <p>Content Strategist</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/100" alt="Team Member">
+                <h3>Prakriti K C</h3>
+                <p>Data Analyst</p>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Leadership Institute Australia | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>
+            Follow us:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+
 </body>
 </html>
