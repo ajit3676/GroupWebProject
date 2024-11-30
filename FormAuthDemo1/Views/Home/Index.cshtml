@@ -36,20 +36,37 @@
             line-height: 1.6;
             color: #555;
         }
-
         .section-header {
-            background-color: #222;
-            color: #fff;
-            padding: 60px 20px;
+            background: url('https://cdn.pixabay.com/photo/2014/05/26/09/58/sydney-opera-house-354375_1280.jpg') no-repeat center center;
+            background-size: cover; /* Ensures the image covers the section */
+            background-position: center; /* Centers the image */
+            color: #fff; /* White text color */
+            padding: 300px 40px; /* Increased padding (top/bottom = 100px, left/right = 40px) */
+            min-height: 400px; /* Minimum height of the section */
             text-align: center;
             border-radius: 10px 10px 0 0;
+            position: relative; /* Necessary for overlay positioning */
         }
 
-        .programs img, .partnerships img, .conferences img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+            /* Dark overlay for better contrast */
+            .section-header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+                border-radius: 10px 10px 0 0; /* Match the border-radius */
+                z-index: 1; /* Layer it behind the text */
+            }
+
+            /* Ensure text stays above the overlay */
+            .section-header h1, .section-header p {
+                position: relative;
+                z-index: 2; /* Keeps the text above the overlay */
+                color: #fff; /* Explicitly set text color to white */
+            }
     </style>
     <style>
         .section {
@@ -80,33 +97,56 @@
         <h1>Empowering Leaders of Tomorrow</h1>
         <p>Your journey to exceptional leadership starts here.</p>
     </div>
-    <div class="section">
-        <h2>What We Do?</h2>
-        <p>At the Leadership Institute Australia (LIA), we specialize in providing high-quality research training programs for academic students and professionals. Our offerings include comprehensive research proposal development, project management skills, and the latest methodologies in various research fields. We aim to empower individuals with the knowledge and tools necessary to excel in their academic and professional research endeavors, ensuring a dynamic and supportive learning environment.</p>
+    <div class="section" style="display: flex; align-items: center;">
+        <div style="flex: 1; padding-right: 20px;">
+            <h2>What We Do?</h2>
+            <p>At the Leadership Institute Australia (LIA), we specialize in providing high-quality research training programs for academic students and professionals. Our offerings include comprehensive research proposal development, project management skills, and the latest methodologies in various research fields. We aim to empower individuals with the knowledge and tools necessary to excel in their academic and professional research endeavors, ensuring a dynamic and supportive learning environment.</p>
+        </div>
+        <div style="flex: 0 0 auto;">
+            <img src="https://st2.depositphotos.com/1051392/5967/i/450/depositphotos_59675283-stock-photo-3d-man-what-we-do.jpg" alt="Leadership Program" style="width: 300px; height: auto;">
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Who We Are</h2>
-        <p>Leadership Institute Australia (LIA) is a dedicated organization focused on advancing research skills for students, professionals, and academics. Our mission is to foster a collaborative learning environment where participants gain expertise in research proposal development, project management, and innovative methodologies. With a team of seasoned educators and industry professionals, we are committed to equipping individuals with the tools they need to succeed in their research endeavors.</p>
+    <div class="section" style="display: flex; align-items: center; margin-bottom: 20px;">
+        <div style="flex: 1; padding-right: 20px;">
+            <h2>Who We Are</h2>
+            <p>Leadership Institute Australia (LIA) is a dedicated organization focused on advancing research skills for students, professionals, and academics. Our mission is to foster a collaborative learning environment where participants gain expertise in research proposal development, project management, and innovative methodologies. With a team of seasoned educators and industry professionals, we are committed to equipping individuals with the tools they need to succeed in their research endeavors.</p>
+        </div>
+        <div style="flex: 0 0 auto;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRBrb7tKnlPtKtGjGoHXPh9n-M3TkoKnJJFQ&s" alt="Leadership Program" style="width: 300px; height: auto;">
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Programs</h2>
-        <p>Our leadership programs are designed to equip individuals with essential skills for effective leadership. From strategic management to interpersonal communication, we cover a wide range of areas to develop well-rounded leaders.</p>
-        <img src="https://example.com/programs-image.jpg" alt="Leadership Program">
+    <div class="section" style="display: flex; align-items: center; margin-bottom: 20px;">
+        <div style="flex: 1; padding-right: 20px;">
+            <h2>Programs</h2>
+            <p>Our leadership programs are designed to equip individuals with essential skills for effective leadership. From strategic management to interpersonal communication, we cover a wide range of areas to develop well-rounded leaders.</p>
+        </div>
+        <div style="flex: 0 0 auto;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQSgNG0Fu6qFX6w44nOfYOsYxcVyVx_72stQ&s" alt="Leadership Program" style="width: 300px; height: auto;">
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Partnerships</h2>
-        <p>We have partnerships with prestigious universities and industry leaders, ensuring that our programs provide practical, real-world knowledge. These collaborations also offer our participants access to exclusive events and mentorship opportunities.</p>
-        <img src="https://example.com/partnerships-image.jpg" alt="Partnerships">
+    <div class="section" style="display: flex; align-items: center; margin-bottom: 20px;">
+        <div style="flex: 1; padding-right: 20px;">
+            <h2>Partnerships</h2>
+            <p>We have partnerships with prestigious universities and industry leaders, ensuring that our programs provide practical, real-world knowledge. These collaborations also offer our participants access to exclusive events and mentorship opportunities.</p>
+        </div>
+        <div style="flex: 0 0 auto;">
+            <img src="https://media.licdn.com/dms/image/D5612AQFyZv_LK2dRSw/article-cover_image-shrink_600_2000/0/1687769058851?e=2147483647&v=beta&t=lqR3kCAbFjMsKMkpx80Vb8O3FxcWXR0poI0Vtf7f4s4" alt="Partnerships" style="width: 300px; height: auto;">
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Conferences</h2>
-        <p>Our annual leadership conferences bring together experts and thought leaders to discuss the latest trends, challenges, and innovations in leadership. Attendees can participate in keynote sessions, workshops, and networking events.</p>
-        <img src="https://example.com/conferences-image.jpg" alt="Conferences">
+    <div class="section" style="display: flex; align-items: center; margin-bottom: 20px;">
+        <div style="flex: 1; padding-right: 20px;">
+            <h2>Conferences</h2>
+            <p>Our annual leadership conferences bring together experts and thought leaders to discuss the latest trends, challenges, and innovations in leadership. Attendees can participate in keynote sessions, workshops, and networking events.</p>
+        </div>
+        <div style="flex: 0 0 auto;">
+            <img src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE=" alt="Conferences" style="width: 300px; height: auto;">
+        </div>
     </div>
+
 
 </body>
 </html>
